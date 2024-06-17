@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center">
+  <div class="row row-cols-3">
+    
+    {% for flor in florlist %}
+
+    <div class="modal fade" id="delete{{flor.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Atenção!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Realmente deseja deletar a flor {{flor.nome}}?</p>
+            <p>Ao deletar a flor, todos os dados relacionados a ela serão perdidos.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+            <a href="https://8da8fe9e-86d1-4fa2-b7bd-7a00fb7ec0ec-00-3jn59t72e4ixa.kirk.replit.dev:3000/delete/{{flor.id}}">
+              <button type="button" class="btn btn-danger">Sim</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col" id="cards">
+      <div class="card" style="width: 18rem;">
+        <img src="{{flor.img}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{flor.nome}}</h5>
+          <a href="{{flor.url}}" class="btn btn-primary" target="_blank">Info</a>
+          <a href="https://8da8fe9e-86d1-4fa2-b7bd-7a00fb7ec0ec-00-3jn59t72e4ixa.kirk.replit.dev:3000/edit/{{flor.id}}" class="btn btn-primary">Update</a>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{flor.id}}">Delete</button>
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+
+
+
+{% endblock %}

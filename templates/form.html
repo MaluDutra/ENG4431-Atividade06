@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+  <div id="formulario">
+  <div class="mb-3">
+    <label for="nome" class="form-label" id="textoform">Nome da Flor</label>
+    <input type="text" class="form-control" id="nome" name="nome" value="{{flor.nome}}" placeholder="Digite o nome da flor">
+  </div>
+  <div class="mb-3">
+    <label for="cor" class="form-label" id="textoform">Cor da Flor</label>
+    <input type="text" class="form-control" id="cor" name="cor" value="{{flor.cor}}" placeholder="Digite o cor da flor">
+  </div>
+  <div class="mb-3">
+    <label for="data" class="form-label" id="textoform">Data (dd/mm/aaaa)</label>
+    <input type="text" class="form-control" id="data" name="data" value="{{flor.data}}" placeholder="Data de entrada da flor">
+  </div>
+  <div class="mb-3">
+    <label for="especie" class="form-label" id="textoform">Especie</label>
+    <input type="text" class="form-control" id="especie" name="especie" value="{{flor.especie}}" placeholder="Especie da flor">
+  </div>
+  <div class="mb-3">
+    <label for="preco" class="form-label" id="textoform">Preço</label>
+    <input type="number" class="form-control" id="preco" name="preco" value="{{flor.preco}}" placeholder="Preço da flor">
+  </div>
+  <div class="mb-3">
+    <label for="img" class="form-label" id="textoform">Link para a Imagem</label>
+    <input type="text" class="form-control" id="img" name="img" value="{{flor.img}}" placeholder="Copie e cole a URL para acessar a foto da flor">
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form>
+
+{% endblock %}

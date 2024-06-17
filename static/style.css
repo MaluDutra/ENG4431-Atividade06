@@ -1,0 +1,26 @@
+body {
+  background-color: #f6f2df;
+}
+
+#formulario{
+  text-align: center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.header{
+  padding:2%;
+}
+
+#textoform{
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+#cards{
+  padding-bottom: 20px;
+}
+
+h5{
+  font-family: "Josefin Sans", sans-serif;
+}
